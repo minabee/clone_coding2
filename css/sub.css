@@ -1,0 +1,375 @@
+/* 2 페이지 */
+
+
+/* ==================== header ====================== */
+h1{
+    box-shadow: 0 .15rem .3rem #00000042;
+}
+header{
+    position: static; /*sub에서는 앱솔루트 아니라 기본으로 바꿔줌*/
+    margin: 0 auto; /*가로크기가 있으므로*/
+    transform: translate(0); /*margin: 0 auto; 줬으므로 transform도 0으로 (가운데 오기 위해)*/
+}
+header nav ul li a:hover{
+    color: #000;
+}
+header nav ul li a:after{
+    background: #4723AE;;
+}
+
+header .navigation{
+    position: relative; /*search 앱솔루트 주기위해*/
+}
+header .navigation .search{
+    display: block;
+    position: absolute;
+    right: 0; top: 0;             
+}
+header .navigation input{
+    background-position: 1.24rem center; /*왼쪽에서 1.24rem 떨어짐 + 중앙 (기본적으로, 배경이미지는 왼쪽상단 꼭지점부터 시작)*/
+    text-indent: 2.8915rem;
+}
+header .navigation input.active{
+    background-image: url(../imgs/icon_search.png); /*입력해도 돋보기 아이콘 사라지지 않게*/
+}
+header .navigation input::placeholder{
+    text-align: left;
+    color: #C6C6D4;
+    text-indent: 2.8915rem; /*들여쓰기*/
+}
+
+
+/* ==================== main ====================== */
+main{
+    width: 64.45rem;
+    margin: 0 auto;
+    padding: 7.25rem 0 0;
+}
+main .detail_info{
+    position: relative;
+    padding: 0 5.9rem 0 16.55rem;
+    height: 18.75rem;
+    margin: 0 0 1.65rem;
+}
+main .detail_info h2{
+    font-size: 2rem;
+    color: #303336;
+    line-height: 2.5rem;
+    padding: 2.05rem 0 .9rem;
+}
+main .detail_info p{
+    font-size: .65rem;
+    line-height: 1.1rem;
+    color: #7B8591;
+}
+main .detail_info .thumb{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+main .detail_info .thumbnail{
+    width: 14.65rem;
+    height: 18.75rem;
+    border-radius: .5rem;
+}
+main .detail_info .thumb .mark{
+    position: absolute;
+    right: .849rem;
+    top: 0;
+}
+main .detail_info .more{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: url(../imgs/bg_join.png) no-repeat right .85rem top .15rem #4621AD;
+    border-radius: 0 0 0 100%;
+}
+main .detail_info .list{
+    display: flex;
+    position: absolute;
+    left: 16.55rem;
+    bottom: 0;
+}
+main .detail_info .list li{
+    padding: 0 .7785rem 0 0;
+}
+main .detail_info .list li img{
+    width: 4.3rem;
+    height: 4.5rem;
+    border-radius: .5rem;
+}
+main .detail_info .list li button{
+    border: none;
+    background: transparent;
+}
+.new_list ul{
+    display: flex;
+    /* 여기서 justify-content: space-between; 을 주면 프로필이 빠지면 문제가 됨 (양 옆으로 퍼짐), 그러므로 왼쪽에 붙어있게 양 옆에 여백을 줌 */
+}
+.new_list li{
+    position: relative; /*프로필 앱솔루트 주기위해*/
+    box-shadow: 0 .15rem .3rem #00000029;
+    border-radius: 0 0 .5rem .5rem; /*왼쪽top에서 시계방향으로*/
+}
+.new_list li ~ li{ /*li 형제*/
+    margin-left: 1.6915rem;
+}
+.new_list li .info{
+    display: block; /*영역주기위해 , block은 기본 가로가 100% 임*/
+    width: 11.5rem;
+}
+.new_list li .info img{
+    width: 100%;
+    height: 7.5rem;
+    border-radius: .5rem .5rem 0 0;
+}
+.new_list li .info figcaption{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4.0625rem;
+    background: url(../imgs/btn_more2.png) no-repeat right .9565rem center / 1.1655rem 1.1655rem #fff;
+    padding: 0 0 0 .943rem;
+    border-radius: 0 0 .5rem .5rem;
+}
+.new_list li .info figcaption strong{
+    font-size: .45rem;
+    color: #303336;
+}
+.new_list li .info figcaption span{
+    font-size: .35rem;
+    color: #7B8591;
+}
+.new_list li .profile{
+    position: absolute;
+    right: .8rem;
+    top: .8rem;
+}
+.new_list li .profile img{
+    width: 1.8485rem;
+    height: 1.8485rem;
+    border-radius: 100%;
+}
+
+
+/* 3 페이지 */
+.playpage{
+    padding-bottom: 9.5rem;
+}
+.playlist{
+    float: left;
+    width: 31rem;
+    height: 30.5rem;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #EFEFEF;
+    border-radius: .5rem;
+}
+.playlist .album{
+    padding: 1.2rem 1.1rem 0;
+    font-size: 0; /*자식인 img와 div가 inline-block이므로 여백이 생기므로 (inline-block은 옆에 가늠할 수 없는 여백이 생김) font-size 0을 줘서 여백을 없앰*/
+}
+.playlist .album > img{
+    width: 9.45rem;
+    vertical-align: middle;
+}
+.playlist .album > div{
+    display: inline-block; /*div는 block요소임. 수평나열시킴(행배치) */
+    vertical-align: middle;
+    padding: 0 0 0 1.85rem;
+}
+.playlist .album h2{
+    padding: 0 0 .95rem;
+    font-size: 1.15rem;
+    color: #3B3D40;
+    font-weight: bold;
+}
+.playlist .album h2 span{
+    display: block; /*수직나열시킴*/
+    margin: .23rem 0;
+    font-size: .75rem;
+    font-weight: normal;
+}
+.playlist .album h2 em{
+    display: block;
+    font-size: .65rem;
+    font-weight: normal;
+}
+.playlist .album .btns button + button{ /*버튼 인접형제만*/
+    margin-left: .975rem;
+}
+.btn_type3{
+    border: 1px solid #e1e1e1;
+    border-radius: .2rem;
+    padding: 0 .6rem; /*너비를 주게되면 반응형 x , 좌우 여백만 줌*/
+    line-height: 1.2rem;
+    background: #fff;
+    font-size: .5rem;
+    color: #4e4e4e;
+}
+.btn_type3::before{ /*왼쪽 아이콘 넣기*/
+    content: "";
+    display: inline-block; /*content는 inline요소라, 영역적용 안되기 때문에 inline-block줌*/
+    margin-right: .65rem;
+    vertical-align: middle; /*수직정렬 (vertical-align은 inline과 inline-block에만 적용됨) */
+}
+.btn_type3.ico1::before{
+    width: .4rem;
+    height: .4rem;
+    background: url(../imgs/icon_add.png) no-repeat 0 0 / cover;
+}
+.btn_type3.ico2::before{
+    width: .465rem;
+    height: .6rem;
+    background: url(../imgs/icon_download.png) no-repeat 0 0 / cover;
+}
+.mo_btn{
+    display: none; /*모바일 버튼*/
+}
+.playlist .list ul{
+    height: 17.5rem;
+    overflow: auto; /*높이 17.5rem 이상이 되면 스크롤 생기게*/
+}
+.playlist .list li{
+    display: flex;
+    justify-content: space-between; /*양 옆으로 퍼짐*/
+    padding: 0 1.1rem;
+    line-height: 2.5rem;
+}
+.playlist .list li .down{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: url(../imgs/icon_download.png) no-repeat center / auto .6rem;
+}
+.playlist .list li span{
+    color: #6f6f6f;
+    font-size: .65rem;
+}
+.playlist .list li .more{
+    display: none;
+}
+.playlist .list li + li{ /*li 인접 형제만*/
+    border-top: 1px solid #eee;
+}
+.playlist .list li .play{
+    color: #3b3d40;
+    font-size: .65rem;
+    background: none;
+    border: none;
+}
+.playlist .list li .play span{
+    display: none;
+}
+.playlist .list li .play::before{
+    content: "";
+    display: inline-block; /*영역주기위해*/
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 1px solid #dddddd;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: .65rem;
+    background: url(../imgs/icon_play.png) no-repeat center / .3rem auto;
+}
+.playlist .list li .play.pause::before{
+    background-image: url(../imgs/icon_pause.png);
+    background-color: #838d8f;
+}
+
+.information{
+    float: right;
+    width: 31.15rem;
+    height: 30.5rem;
+}
+.information .positive{
+    margin: 0 0 1.9rem;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #efefef;
+    border-radius: .5rem;
+}
+.information .positive .visual{
+    position: relative;
+}
+.information .positive .visual img{
+    width: 100%; /*사진 사이즈 맞추기 위해*/
+}
+.information .positive .visual span{
+    position: absolute;
+    left: 50%; top: 50%; transform: translate(-50%, -50%); /*가운데*/
+    width: 10.65rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    background: rgba(0,0,0,.32);
+    border-radius: 1.4rem;
+    font-size: .7rem;
+    color: #fff;
+    text-align: center;
+}
+.information .positive .info{
+    position: relative;
+    padding: 1.85rem 1.3rem;
+}
+.information .positive .info h3{
+    padding: 0 0 .3rem;
+    font-size: .65rem;
+    color: #303336;
+    font-weight: bold;
+}
+.information .positive .info p{
+    padding: 0 0 .6rem;
+    font-size: .6rem;
+    color: #7b8591;
+}
+.information .positive .info button{
+    position: absolute;
+    right: 1.3rem;
+    bottom: 1.85rem;
+}
+
+.information .new_list li .info{
+    width: 9.4rem;
+}
+.information .new_list li ~ li{
+    margin-left: 1.4775rem;
+}
+.information .new_list li .info img{
+    height: 6.4745rem;
+}
+.information .new_list li .info figcaption{
+    position: relative;
+    height: 3.3rem;
+    background: none;
+}
+.information .new_list li .info figcaption::after{
+    position: absolute;
+    right: 0;
+    bottom: .85rem;
+    /* .playlist .list li .play::before 그대로 가져옴 */
+    content: "";
+    display: inline-block; 
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 1px solid #dddddd;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: .65rem;
+    background: url(../imgs/icon_play.png) no-repeat center / .3rem auto;
+}
+.information .new_list li .info figcaption strong{
+    font-weight: bold;
+}
+
+.player{
+    position: fixed;
+    left: 0; right: 0; /*가로 100%*/
+    bottom: 0;
+    background: #4621ad;
+    height: 3.25rem;
+}
+.player > div{
+    width: 64.45rem;
+    margin: 0 auto;
+    color: #fff;
+}

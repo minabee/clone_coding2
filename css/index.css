@@ -1,0 +1,85 @@
+/* 1 페이지 */
+
+body{
+    background: url(../imgs/bg_visual.png) no-repeat 0 0 / cover; 
+    /*배경 꽉 채우게, 0 0은 좌표*/
+    /*background: 색상 이미지 반복여부 위치 / 사이즈*/
+}
+body:after{
+    content: "";
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(70, 33, 173, 0.87);
+    z-index: -1; /*글씨 뒤로가게*/
+}
+
+
+/* =====================visual========================= */
+
+.visual{
+    display: flex; /*반응형 주기위해*/
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /*부모 태그와는 상관없이 보이는 Viewport Height의 100% 사용*/
+    text-align: center;
+    color: #fff;
+}
+.visual h2{
+    font-size: 2rem;
+}
+.visual .txt{
+    padding: .5rem 0 4.65rem;
+    font-size: .7rem;
+    line-height: .9rem;
+}
+.visual .txt br {display: none;}
+.visual .txt br.web {display: block;}
+.visual .list{
+    display: flex;
+    width: 68.2rem;
+    margin: 0 auto 4.75rem; /*상 좌우 하*/
+}
+.visual .list li{
+    flex: 1;
+    padding: 4.603rem 0 0;
+    background: no-repeat center top / auto 3.6425rem;
+    /*background: 색상 이미지 반복여부 위치 / 가로 세로*/
+}
+.visual .list li:nth-child(1){
+    background-image: url(../imgs/icon_index1.png);
+}
+.visual .list li:nth-child(2){
+    background-image: url(../imgs/icon_index2.png);
+}
+.visual .list li:nth-child(3){
+    background-image: url(../imgs/icon_index3.png);
+}
+.visual .list li:nth-child(4){
+    background-image: url(../imgs/icon_index4.png);
+}
+.visual .list li strong{ /*여백안됨(padding 안 먹음)*/
+    font-size: .95rem;
+}
+.visual .list li p{
+    padding: .5rem 0 0;
+    font-size: .9rem;
+}
+
+.visual .sign_box .btn button{
+    margin: 0 1.573rem; /*가운데 정렬(양쪽 여백주기)*/
+    width: 12.6165rem;
+    height: 2.174rem;
+    border-radius: 2.174rem;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    background: none;
+    color: #Fff;
+}
+.visual .sign_box .btn button:hover{
+    background: #fff;
+    color: #4621AD;
+}
+.visual .mobile_content{
+    display: none;
+}

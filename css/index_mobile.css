@@ -1,0 +1,146 @@
+/* 1페이지 모바일버전 */
+
+/* index와 같은 스타일은 생략함 */
+body{
+    background: url(../imgs/bg_visual.png) no-repeat 45% 30% / auto 100%;
+    font-size: 1rem;
+}
+
+
+
+/* =====================visual========================= */
+.visual{
+    display: block; /*세로로 정렬*/
+    width: 100%; /*부모 태그의 100% 사용*/
+    height: auto;
+    padding: 8.85rem 2.75rem 0;
+}
+.visual h2{
+    width: 7.4rem;
+    text-align: left;
+}
+.visual .txt{
+    padding: 3rem 0 4.2rem;
+    text-align: left;
+}
+.visual .txt br{
+    display: block;
+}
+.visual .txt br.web{
+    display: none;
+}
+.visual .list{
+    flex-direction: column; /*행으로 정렬은 block도 가능하지만, 아이콘 순서를 바꾸기 위해 flex-direction을 사용*/
+    width: 100%;
+    margin: 0 auto 4.2045rem;
+}
+.visual .list li{
+    padding-bottom: 1.1685rem;
+    background-size: 3.6425rem auto; /*배경 아이콘 모바일은 가로크기에 맞춤 (웹은 세로크기에 맞췄음)*/
+}
+/* flex - order 순서바꿈 */
+.visual .list li:nth-child(1){order: 2;}
+.visual .list li:nth-child(2){order: 3;}
+.visual .list li:nth-child(3){order: 4;}
+.visual .list li:nth-child(4){order: 1;}
+
+.visual .list li strong{
+    font-size: .75rem;
+}
+.visual .list li p{
+    padding: .548rem 0 0;
+    font-size: .7rem;
+}
+
+.sign_box{
+    background: #fff;
+    border-radius: .8rem;
+}
+.visual .sign_box .btn{
+    padding: 2.4rem 0 0;
+}
+.visual .sign_box .btn button{
+    width: calc(50% - 2.6rem); /*50%(버튼 두개이니까 각각 영역) - 2.6rem (버튼을 제외한 여백공간, 50%에서)*/
+    height: 1.5rem;
+    margin: 0 .6rem;
+    border: 1px solid #4621ad;
+    border-radius: 1.5rem;
+    color: #4621ad;
+    font-size: .6rem;
+    box-shadow: none;
+}
+.visual .sign_box .btn button:hover{
+    background: #4621ad;
+    color: #fff;
+}
+
+.visual .mobile_content{
+    display: block;
+    padding: 2rem 1.25rem 1.5rem;
+    margin: 0 0 3.75rem;
+}
+.visual .chk_block{
+    font-size: 0; /*inline-block을 주면 공백이 생기기 때문에 정확한 계산을 위해 폰트사이즈 0을 주면 공백이 사라짐 (label에 inline-block줬음)*/
+    padding: 0 0 2.5rem;
+}
+.visual .chk_block label{
+    display: inline-block; /*열배치 + 속성주기위해*/
+    width: calc(50% - 1.2rem);
+    height: 5.8rem;
+    margin: 0 .4rem 0 .8rem; /*top right bottom left (시계방향)*/
+    border-radius: .5rem;
+    background: #fff no-repeat center;
+    box-shadow: 0px 6px 12px #00000030;
+}
+.visual .chk_block label ~ label{ /* ~ 마지막 label*/
+    margin: 0 .8rem 0 .4rem;
+}
+.visual .chk_block .man{
+    background-image: url(../imgs/icon_man.png);
+    /* label에 background 설정 했기 떄문에 background-image로 줌 */
+}
+.visual .chk_block .woman{
+    background-image: url(../imgs/icon_woman.png);
+}
+.visual .chk_block input:checked + label{ /* + 인접 형제에 있는 label*/
+    background-color: #4621AD;
+}
+
+.visual .info li{
+    padding: 0 0 .8rem;
+}
+.visual .info input,
+.visual .info select{
+    width: 100%;
+    height: 2.25rem;
+    border-radius: 2.25rem;
+    border: 1px solid #4621AD;
+    text-indent: 1.5rem;
+    font-size: .6rem;
+    background: no-repeat right 1.35rem center;
+}
+.visual .info select,
+.visual .info input::placeholder{
+    color: #cdd0d9;
+}
+.visual .info input{
+    background-image: url(../imgs/bg_input.png);
+}
+.visual .info select{
+    appearance: none; /*select의 기본 화살표 지움*/
+    background-image: url(../imgs/bg_select.png);
+}
+.visual .info select::-ms-expand{ /*select의 기본 화살표 지움(익스플로러까지 고려함)*/
+    appearance: none; 
+}
+.visual .btn_join{
+    padding: 1.2rem 0 0;
+    text-align: center;
+}
+.visual .btn_join button{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    border: none;
+    background: url(../imgs/bg_join.png) no-repeat center #4723AE;
+}

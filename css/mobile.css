@@ -1,0 +1,193 @@
+/* 2,3페이지 모바일버전 */
+
+
+/* ==================== header ====================== */
+header{
+    box-shadow: 0 .1rem .3rem #0000002c;
+}
+h1{
+    box-shadow: none;
+}
+
+
+/* 2페이지 */
+
+/* ==================== main ====================== */
+
+main{
+    width: 100%;
+    padding: 2.35rem 2.45rem;
+}
+main .detail_info{
+    display: flex; /*자손을 순서 바꾸기 위해 (그림이 위로 올라와있음, order순서를 줌*/
+    flex-direction: column;
+    padding: 0;
+    height: auto;
+    margin: 0 0 3.25rem;
+}
+main .detail_info h2{
+    order: 3;
+    padding: .9rem 0 .5rem;
+}
+main .detail_info p{
+    order: 4;
+    padding: 0 0 1.35rem;
+}
+main .detail_info > div{
+    display: flex; /*div로 묶은 사진 옆으로 정렬*/
+}
+main .detail_info .thumb{
+    order: 1;
+    position: static; /*좌표가 들어가지 않게 - 순서대로 떨어지게*/
+    width: calc(100% - 4.6155rem); /*.list(여백포함) 제외한 길이*/
+}
+main .detail_info .thumb .thumbnail{
+    width: 100%;
+    height: auto; /*스크립트로 작업*/
+}
+main .detail_info .thumb .mark{
+    display: none;
+}
+main .detail_info .list{
+    order: 2;
+    position: static;
+    flex-direction: column;
+    width: calc(100% - 9.7545rem); /*.thumb(여백포함) 제외한 길이*/
+    padding: 0 0 0 .6255rem;
+}
+main .detail_info .list li{
+    padding: 0 0 .4225rem;
+}
+main .detail_info .list li button{
+    width: 100%;
+}
+main .detail_info .list li img{
+    width: 100%;
+    height: auto; /*스크립트로 작업*/
+}
+main .detail_info .list li:last-child{
+    display: none;
+}
+main .detail_info .more{
+    /* .hide 되어있는 문구는 스크립트로 작업하여 보여지게 함 */
+    order: 5;
+    position: static;
+    width: 4.95rem;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    background-image: none;
+    border-radius: 1.65rem; 
+    text-transform: uppercase; /*대문자로*/
+    text-align: center;
+    font-size: .55rem;
+    color: #fff;
+}
+
+.new_list ul{
+    flex-direction: column;
+}
+.new_list li ~ li{
+    margin: 1.513rem 0 0;
+}
+.new_list li .info{
+    width: 100%;
+}
+.new_list li .info img{
+    width: 100%;
+    height: auto;
+}
+
+.new_list li .info figcaption{
+    height: 4.9835rem;
+}
+.new_list li .info figcaption strong{
+    font-size: .65rem;
+}
+.new_list li .info figcaption span{
+    font-size: .55rem;
+}
+
+
+/* 3페이지 */
+.information{
+    display: none;
+}
+.playlist{
+    float: none;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border: none;
+}
+.playlist .album{
+    text-align: center;
+}
+.playlist .album > img{
+    width: 6.8rem;
+    height: 6.8rem;
+    margin-bottom: 1.05rem;
+}
+.playlist .album > div{
+    display: block; /*수직나열*/
+    padding: 0;
+}
+.playlist .list ul{
+    padding: 2.05rem 0 0;
+    overflow: visible;
+    height: auto;
+}
+.playlist .list ul li{
+    padding: 0;
+}
+.playlist .list ul li > div .down,
+.playlist .list ul li > div span{
+    display: none;
+}
+.playlist .list ul li .play{
+    text-align: left;
+    font-size: .7rem;
+    color: #706b7b;
+}
+.playlist .list ul li .play span{
+    display: block;
+    opacity: .54;
+}
+.playlist .list ul li .play::before{
+    display: none;
+}
+.playlist .list ul li + li{
+    border: none;
+    padding-top: .85rem;
+}
+.playlist .list ul li .more{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: url(../imgs/icon_more.png) no-repeat right center / .3rem auto;
+    border: none;
+}
+
+.mo_btn{
+    display: block;
+    padding: 2.7rem 0 0;
+    text-align: center;
+}
+.btn_type4{
+    width: 4.8rem;
+    height: 1.3rem;
+    border-radius: 1.3rem;
+    border: 1px solid #4621ad;
+    font-size: .3rem;
+}
+.btn_type4.on{
+    background: #fff;
+    color: #4621ad;
+}
+.btn_type4.off{
+    background: #4621AD;
+    color: #fff;
+}
+.player{
+    box-shadow: 0px -3px 6px #5b86e533;
+    background: #fff;
+}

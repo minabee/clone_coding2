@@ -1,0 +1,85 @@
+/* 공통적인 스타일 */
+
+html{ font-size: 20px;}
+body{ font-size: 1rem;}
+
+
+/* ==================== header ====================== */
+
+h1{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 12.35rem;
+    height: 5.2rem;
+    background: url(../imgs/h1_logo.png) no-repeat center / 4.75rem auto #fff;
+    border-radius: 0 0 2.25rem 2.25rem;
+}   
+
+header{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 59rem;
+    padding: 7.4rem 0 0; /*상 좌우 하*/
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    padding: 0 3rem 0 0;
+}
+header nav ul li a{
+    position: relative;
+    font-size: .75rem;
+    line-height: 1rem;
+    color: #c6c6d4;
+}
+header nav ul li a:hover{
+    color: #fff;
+}
+header nav ul li a:after{
+    content: ""; /*가상의 요소를 만듬*/
+    position: absolute;
+    background: #fff;
+    left: 0; right: 0; /*left:0; right:0; -> 가로 100%*/
+    /*a요소의 가로로 꽉차게 만듬*/
+    height: .15rem;
+    bottom: -.125rem; /*글씨와 밑줄 간격 0.125rem*/
+    transform: translateY(.5rem); /*Y축으로 10px 떨어져있음*/
+    transition: all .3s;
+    opacity: 0;
+}
+header nav ul li a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+header .search,
+header .btn_menu,
+header .btn_alram{
+    display: none;
+}
+
+header .navigation input{
+    width: 14.3rem;
+    height: 1.7785rem;
+    border-radius: 1.7785rem; /*높이만큼 주면 소시지모양이 됨*/
+    border: none;
+    background: url(../imgs/icon_search.png) no-repeat 3.35rem center / .919rem auto #f6f6f6; /*왼쪽에서 3.35rem 떨어지게*/
+    text-indent: 2rem;
+}
+header .navigation input.active{
+    background-image: none;
+}
+header .navigation input::placeholder{
+    text-align: center;
+    color: #c6c6d4;
+    text-indent: 1.4935rem; /*들여쓰기 -> 센터에서 1.4935rem길이만큼 오른쪽으로*/
+}
+
+
+
+
